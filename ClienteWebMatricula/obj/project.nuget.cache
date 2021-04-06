@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vNNzCCiq6p97BeoWfyg9Ial7dR7pgSA73fTjrLWZyxompcH4SiGKe/zHLU/lrviDY7iWHFWcwf4QIim7OJ8TVA==",
+  "dgSpecHash": "ZatrhqbajzfyD/mvbnitPbiCK0ldrhy60GqWxOmMtRrdJARpG7QwUK6JJwUA7TkcNrZp0hX+KkiiUvZ0K7XGYA==",
   "success": true,
   "projectFilePath": "C:\\Users\\PereiraCoto\\Documents\\Personal\\Cuatrimestre\\Programacion5\\Proyectos\\Proyecto2\\ClienteWebMatricula\\ClienteWebMatricula\\ClienteWebMatricula.csproj",
   "expectedPackageFiles": [
@@ -44,7 +44,7 @@
     "C:\\Users\\PereiraCoto\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\PereiraCoto\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\PereiraCoto\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
-    "C:\\Users\\PereiraCoto\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\PereiraCoto\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\PereiraCoto\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\PereiraCoto\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\PereiraCoto\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

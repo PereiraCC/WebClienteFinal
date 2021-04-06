@@ -62,7 +62,7 @@ namespace ClienteWebMatricula
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Estudiantes}/{action=Estudiantes}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

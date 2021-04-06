@@ -182,3 +182,4 @@ C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Pro
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\ClienteWebMatricula.dll
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\ClienteWebMatricula.pdb
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\ClienteWebMatricula.genruntimeconfig.cache
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Estudiantes\Estudiantes.cshtml.g.cs
