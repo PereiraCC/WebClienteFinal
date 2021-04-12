@@ -1,0 +1,160 @@
+﻿@model List<ModelEmails>
+@{
+    int contador = 0;
+    ViewData["Title"] = "Profesores Emails";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Xtreme lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Xtreme admin lite design, Xtreme admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+          content="Xtreme Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@ViewData["Title"]</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/xtreme-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row align-items-center">
+                <div class="col-5">
+                    <h4 class="page-title">Mantenimiento de Emails</h4>
+                    <div class="d-flex align-items-center">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Profesores</li>
+                                <li class="breadcrumb-item active" aria-current="page">Emails</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="text-end upgrade-btn">
+                        <a onclick="addrow()" class="btn btn-success text-white">Nuevo Emails</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Emails</h4>
+                            <h6 class="card-subtitle">
+                                Se muestra la tabla de los Emails
+                            </h6>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="tablaTelefonos" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Posicion</th>
+                                        <th scope="col">Emails</th>
+                                        <th scope="col">Opciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            @{
+                                                contador = Model.IndexOf(item) + 1;
+                                            }
+                                            <td>@contador</td>
+                                            <td>@item.email</td>
+                                            <td>
+                                                <a class="btn" href="https://www.google.co.cr/"><i class=" fa fa-edit"></i></a>
+                                                <a class="btn" href="https://www.youtube.com/"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Right sidebar -->
+            <!-- ============================================================== -->
+            <!-- .right-sidebar -->
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center">
+            Todos los derechos reservados. Sistema de Matricula.
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script>
+        function addrow() {
+            var table = document.getElementById("test");
+            var row = table.insertRow(0);
+            //this adds row in 0 index i.e. first place
+            row.innerHTML = "<td>row0 column1</td><td>row0 column2</td>";
+        }
+    </script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../dist/js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="../../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../../dist/js/custom.js"></script>
+    <script src="~/js/site.js"></script>
+</body>

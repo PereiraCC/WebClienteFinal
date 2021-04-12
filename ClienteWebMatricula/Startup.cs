@@ -63,6 +63,34 @@ namespace ClienteWebMatricula
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Estudiantes}/{action=Estudiantes}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "Estudiantes",
+                    pattern: "{controller=Estudiantes}/{action=Estudiantes}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "Profesores",
+                    pattern: "{controller=Profesores}/{action=Profesores}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "Cursos",
+                    pattern: "{controller=Cursos}/{action=Cursos}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "Carreras",
+                    pattern: "{controller=Carreras}/{action=Carreras}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "Periodos",
+                    pattern: "{controller=Periodos}/{action=Periodos}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "Horarios",
+                    pattern: "{controller=Horarios}/{action=Horarios}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "Grupos",
+                    pattern: "{controller=Grupos}/{action=Grupos}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

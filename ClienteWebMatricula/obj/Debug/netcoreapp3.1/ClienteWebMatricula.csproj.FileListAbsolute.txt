@@ -183,3 +183,13 @@ C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Pro
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\ClienteWebMatricula.pdb
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\ClienteWebMatricula.genruntimeconfig.cache
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Estudiantes\Estudiantes.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Profesores\Profesores.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Cursos\Cursos.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Carreras\Carreras.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Periodos\Periodos.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Horarios\Horarios.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Grupos\Grupos.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Estudiantes\Emails.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Estudiantes\Telefonos.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Profesores\Emails.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Profesores\Telefonos.cshtml.g.cs

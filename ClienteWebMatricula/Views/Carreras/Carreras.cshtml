@@ -1,6 +1,5 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model List<ModelCarreras>
+@{ ViewData["Title"] = "Carreras"; }
 
 <head>
     <meta charset="utf-8">
@@ -18,6 +17,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <!-- Custom CSS -->
     <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -41,7 +41,7 @@
     <!-- ============================================================== -->
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
          data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-       
+
         <aside class="left-sidebar" data-sidebarbg="skin6">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
@@ -82,43 +82,43 @@
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               asp-controller="Estudiantes" asp-action="Estudiantes"  aria-expanded="false">
+                               asp-controller="Estudiantes" asp-action="Estudiantes" aria-expanded="false">
                                 <i class="mdi mdi-face"></i><span class="hide-menu">Estudiantes</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               asp-controller="Profesores" asp-action="Profesores"  aria-expanded="false">
+                               asp-controller="Profesores" asp-action="Profesores" aria-expanded="false">
                                 <i class="mdi mdi-account-settings"></i><span class="hide-menu">Profesores</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               asp-controller="Cursos" asp-action="Cursos"  aria-expanded="false">
+                               asp-controller="Cursos" asp-action="Cursos" aria-expanded="false">
                                 <i class="mdi mdi-file"></i><span class="hide-menu">Cursos</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               asp-controller="Carreras" asp-action="Carreras"  aria-expanded="false">
+                               asp-controller="Carreras" asp-action="Carreras" aria-expanded="false">
                                 <i class="mdi mdi-settings"></i><span class="hide-menu">Carreras</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                              asp-controller="Periodos" asp-action="Periodos"  aria-expanded="false">
+                               asp-controller="Periodos" asp-action="Periodos" aria-expanded="false">
                                 <i class="mdi mdi-calendar"></i><span class="hide-menu">Periodos</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               asp-controller="Horarios" asp-action="Horarios"  aria-expanded="false">
+                               asp-controller="Horarios" asp-action="Horarios" aria-expanded="false">
                                 <i class="mdi mdi-clock"></i><span class="hide-menu">Horarios</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               asp-controller="Grupos" asp-action="Grupos"  aria-expanded="false">
+                               asp-controller="Grupos" asp-action="Grupos" aria-expanded="false">
                                 <i class="mdi mdi-group"></i><span class="hide-menu">Grupos</span>
                             </a>
                         </li>
@@ -142,14 +142,19 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Mantenimiento de Estudiantes</h4>
+                        <h4 class="page-title">Mantenimiento de Carreras</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Estudiantes</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Carreras</li>
                                 </ol>
                             </nav>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="text-end upgrade-btn">
+                            <a href="#" class="btn btn-success text-white">Nuevo Carrera</a>
                         </div>
                     </div>
                 </div>
@@ -168,70 +173,36 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Estudiantes</h4>
+                                <h4 class="card-title">Carreras</h4>
                                 <h6 class="card-subtitle">
-                                    Se muestra la tabla de los estudiantes
+                                    Se muestra la tabla de las Carreras
                                 </h6>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Identificacion</th>
-                                            <th scope="col">Nombre</th>
-                                            <th scope="col">Apellidos</th>
-                                            <th scope="col">Fecha Nacimiento</th>
-                                            <th scope="col">Telefonos</th>
-                                            <th scope="col">Emails</th>
+                                            <th scope="col">Codigo Carrera</th>
+                                            <th scope="col">Nombre Carrera</th>
                                             <th scope="col">Opciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>Otto</td>
-                                            <td>Otto</td>
-                                            <td>Otto</td>
-                                            <td>Otto</td>
-                                            <td>
-                                                <button class="btn"><i class="fa fa-edit"></i></button>
-                                                <button class="btn"><i class="fa fa-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>Thornton</td>
-                                            <td>Thornton</td>
-                                            <td>Thornton</td>
-                                            <td>Thornton</td>
-                                            <td>
-                                                <button class="btn" href="#"><i class="fa fa-edit"></i></button>
-                                                <button class="btn" href="#"><i class="fa fa-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>the Bird</td>
-                                            <td>the Bird</td>
-                                            <td>the Bird</td>
-                                            <td>the Bird</td>
-                                            <td>
-                                                <button class="btn"><i class="fa fa-edit"></i></button>
-                                                <button class="btn"><i class="fa fa-trash"></i></button>
-                                            </td>
-                                        </tr>
+                                        @foreach (var item in Model)
+                                        {
+                            <tr>
+                                <td>@item.Codigo</td>
+                                <td>@item.Nombre</td>
+                                <td>
+                                    <button class="btn" href=""><i class="fa fa-edit"></i></button>
+                                    <button class="btn"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>}
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                    </div>        
+                    </div>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
@@ -277,4 +248,5 @@
     <script src="../../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="../../dist/js/custom.js"></script>
+    <script src="~/js/site.js"></script>
 </body>

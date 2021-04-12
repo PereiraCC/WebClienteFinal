@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace ClienteWebMatricula.Controllers
 {
-    public class EstudiantesController : Controller
+    public class ProfesoresController : Controller
     {
-        private string URL_API = "http://localhost/WebApiMatricula/api/Usuarios/Estudiantes";
 
-        public IActionResult Estudiantes()
+        private string URL_API = "http://localhost/WebApiMatricula/api/Usuarios/Profesores";
+
+        public IActionResult Profesores()
         {
             List<ModelUsuario> data = ConnectGET();
 

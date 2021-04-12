@@ -78,49 +78,49 @@
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               href="index.html" aria-expanded="false">
+                               asp-controller="Home" asp-action="Index" aria-expanded="false">
                                 <i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Inicio</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               href="pages-profile.html" aria-expanded="false">
+                               asp-controller="Estudiantes" asp-action="Estudiantes" aria-expanded="false">
                                 <i class="mdi mdi-face"></i><span class="hide-menu">Estudiantes</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               href="table-basic.html" aria-expanded="false">
+                               asp-controller="Profesores" asp-action="Profesores" aria-expanded="false">
                                 <i class="mdi mdi-account-settings"></i><span class="hide-menu">Profesores</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               href="icon-material.html" aria-expanded="false">
+                               asp-controller="Cursos" asp-action="Cursos" aria-expanded="false">
                                 <i class="mdi mdi-file"></i><span class="hide-menu">Cursos</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               href="starter-kit.html" aria-expanded="false">
+                               asp-controller="Carreras" asp-action="Carreras" aria-expanded="false">
                                 <i class="mdi mdi-settings"></i><span class="hide-menu">Carreras</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               href="error-404.html" aria-expanded="false">
+                               asp-controller="Periodos" asp-action="Periodos" aria-expanded="false">
                                 <i class="mdi mdi-calendar"></i><span class="hide-menu">Periodos</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               href="error-404.html" aria-expanded="false">
+                               asp-controller="Horarios" asp-action="Horarios" aria-expanded="false">
                                 <i class="mdi mdi-clock"></i><span class="hide-menu">Horarios</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                               href="error-404.html" aria-expanded="false">
+                               asp-controller="Grupos" asp-action="Grupos" aria-expanded="false">
                                 <i class="mdi mdi-group"></i><span class="hide-menu">Grupos</span>
                             </a>
                         </li>
@@ -152,6 +152,11 @@
                                     <li class="breadcrumb-item active" aria-current="page">Estudiantes</li>
                                 </ol>
                             </nav>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="text-end upgrade-btn">
+                            <a href="#" class="btn btn-success text-white">Nuevo Estudiante</a>
                         </div>
                     </div>
                 </div>
@@ -192,15 +197,15 @@
                                         @foreach (var item in Model)
                                         {
                                             <tr>
-                                                <td>@item.NumeroIdentificacion</td>
+                                                <td >@item.NumeroIdentificacion</td>
                                                 <td>@item.Nombre</td>
                                                 <td>@item.Apellidos</td>
                                                 <td>@item.FechaNac</td>
-                                                <td><button class="btn btn-success" onclick="showInPopup('@Url.Action("Estudiantes","Estudiantes",null,Context.Request.Scheme)','New Transaction')">Ver</button></td>
-                                                <td>null</td>
+                                                <td ><button class="btn btn-success" onclick="showInPopup('@Url.Action("Telefonos","Estudiantes",new { id = item.NumeroIdentificacion},Context.Request.Scheme)','Telefonos')">Ver</button></td>
+                                                <td><button class="btn btn-success" onclick="showInPopup('@Url.Action("Emails","Estudiantes",new { id = item.NumeroIdentificacion},Context.Request.Scheme)','Emails')">Ver</button></td>
                                                 <td>
-                                                    <button class="btn" href=""><i class="fa fa-edit"></i></button>
-                                                    <button class="btn"><i class="fa fa-trash"></i></button>
+                                                    <a class="btn" href="https://www.google.co.cr/"><i class=" fa fa-edit"></i></a>
+                                                    <a class="btn" href="https://www.youtube.com/"><i class="fa fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                         }
