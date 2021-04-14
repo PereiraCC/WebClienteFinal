@@ -10,26 +10,11 @@ btnAdd.addEventListener('click', () => {
     let template = `
             <tr>
                 <td>${contador}</td>  
-                <td>${tel}</td>  
+                <td>${tel}</td> 
+                <td>
+                    <a class="btn" href="https://www.google.co.cr/"><i class=" fa fa-edit"></i></a>
+                    <a class="btn" href="https://www.youtube.com/"><i class="fa fa-trash"></i></a>
+                </td>
             </tr>`;
     table.innerHTML += template;
 });
-
-//function addrow(index) {
-
-//    let tel = telefono.nodeValue;
-
-//    let template = `
-//                <td>${tel}</td>  
-//                <td>${tel}</td>  `;
-//    table.innerHTML += template;
-//}
-
-//function addrow(index) {
-
-//    var table = document.getElementById("tablaTelefonos");
-//    var row = table.insertRow(index);
-//    row.innerHTML = "<td>" + index + "</td>" +
-//        "<td>00000000</td>";
-//    index++;
-//}
