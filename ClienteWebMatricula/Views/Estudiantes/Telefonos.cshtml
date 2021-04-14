@@ -1,8 +1,9 @@
 ﻿
 @model List<ModelTelefonos>
 @{
-    int contador = 0;
+    int contador = Model.Count + 1;
     ViewData["Title"] = "Estudiantes Telefonos";
+    Layout = null;
 }
 
 <head>
@@ -59,11 +60,6 @@
                         </nav>
                     </div>
                 </div>
-                <div class="col-7">
-                    <div class="text-end upgrade-btn">
-                        <a onclick="addrow()" class="btn btn-success text-white">Nuevo Telefono</a>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="container-fluid">
@@ -72,39 +68,52 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Telefonos</h4>
-                            <h6 class="card-subtitle">
+                            @*<h6 class="card-subtitle">
                                 Se muestra la tabla de los telefonos
-                            </h6>
+                            </h6>*@
                         </div>
-                        <div class="table-responsive">
-                            <table id="tablaTelefonos" class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Posicion</th>
-                                        <th scope="col">Telefono</th>
-                                        <th scope="col">Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var item in Model)
-                                    {
+                        <div class="card-body">
+                            <form class="form-horizontal form-material mx-2">
+                                <div class="form-group">
+                                    <label class="col-md-12">Numero Telefono</label>
+                                    <div class="col-md-12">
+                                        <input id="txtTelefono" type="text" class="form-control form-control-line">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="text-end upgrade-btn">
+                                <a id="btnAdd" onclick="addrow()" class="btn btn-success text-white">Agregar</a>
+                            </div>
+                        </div>
+                            <div class="table-responsive">
+                                <table id="tablaTelefonos" class="table table-striped">
+                                    <thead>
                                         <tr>
-                                            @{
-                                                contador = Model.IndexOf(item) + 1;
-                                            }
-                                            <td>@contador</td>
-                                            <td>@item.telefono</td>
-                                            <td>
-                                                <a class="btn" href="https://www.google.co.cr/"><i class=" fa fa-edit"></i></a>
-                                                <a class="btn" href="https://www.youtube.com/"><i class="fa fa-trash"></i></a>
-                                            </td>
+                                            <th scope="col">Posicion</th>
+                                            <th scope="col">Telefono</th>
+                                            <th scope="col">Opciones</th>
                                         </tr>
-                                    }
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                @{
+                                                    contador = Model.IndexOf(item) + 1;
+                                                }
+                                                <td>@contador</td>
+                                                <td>@item.telefono</td>
+                                                <td>
+                                                    <a class="btn" href="https://www.google.co.cr/"><i class=" fa fa-edit"></i></a>
+                                                    <a class="btn" href="https://www.youtube.com/"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
             <!-- ============================================================== -->
             <!-- End PAge Content -->
@@ -140,14 +149,7 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
-    <script>
-        function addrow() {
-            var table = document.getElementById("test");
-            var row = table.insertRow(0);
-            //this adds row in 0 index i.e. first place
-            row.innerHTML = "<td>row0 column1</td><td>row0 column2</td>";
-        }
-    </script>
+    <script src="~/js/Telefonos.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../dist/js/app-style-switcher.js"></script>

@@ -181,7 +181,16 @@
                                 </h6>
                             </div>
                             <div class="table-responsive">
-                                      
+                                <table class="table table-striped">
+                                    <asp:GridView ID="grvClientes" runat="server" AutoGenerateColumns="false" class="table table-striped">
+                                        <Columns class="col-md-10">
+                                            <asp:TemplateField HeaderText="Prueba" scope="col">
+                                                <ItemTemplate scope="col">Prueba</ItemTemplate>
+                                                <asp:TemplateField HeaderText="Prueba">
+                                                    <ItemTemplate scope="col">Prueba 2</ItemTemplate>
+                                        </Columns>
+                                    </asp:GridView>
+                                    </table>
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>

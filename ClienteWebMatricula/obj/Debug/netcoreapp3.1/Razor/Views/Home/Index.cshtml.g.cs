@@ -26,8 +26,15 @@ using ClienteWebMatricula.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\Views\_ViewImports.cshtml"
+using System.Web;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b9aae09f3abad3e1135b13b726482e5a80107571", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6397319dcd6277183256886d68feac87111ca416", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8b135ed3a9a77729d2177c8fff085c457bfba9b5", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("sidebar-link waves-effect waves-dark sidebar-link"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -83,7 +90,7 @@ using ClienteWebMatricula.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a801075719476", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a801075719728", async() => {
                 WriteLiteral(@"
     <meta charset=""utf-8"">
     <meta http-equiv=""X-UA-Compatible"" content=""IE=edge"">
@@ -127,7 +134,7 @@ using ClienteWebMatricula.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757112290", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757112542", async() => {
                 WriteLiteral(@"
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -179,7 +186,7 @@ using ClienteWebMatricula.Models;
                                 </div>
                ");
                 WriteLiteral("             </div>\r\n                            <!-- End User Profile-->\r\n                        </li>\r\n                        <li class=\"sidebar-item\">\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757115753", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757116005", async() => {
                     WriteLiteral("\r\n                                <i class=\"mdi mdi-view-dashboard\"></i><span class=\"hide-menu\">Inicio</span>\r\n                            ");
                 }
                 );
@@ -199,7 +206,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        </li>\r\n                        <li class=\"sidebar-item\">\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757117618", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757117870", async() => {
                     WriteLiteral("\r\n                                <i class=\"mdi mdi-face\"></i><span class=\"hide-menu\">Estudiantes</span>\r\n                            ");
                 }
                 );
@@ -219,7 +226,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        </li>\r\n                        <li class=\"sidebar-item\">\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757119478", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757119730", async() => {
                     WriteLiteral("\r\n                                <i class=\"mdi mdi-account-settings\"></i><span class=\"hide-menu\">Profesores</span>\r\n                            ");
                 }
                 );
@@ -239,7 +246,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        </li>\r\n                        <li class=\"sidebar-item\">\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757121349", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757121601", async() => {
                     WriteLiteral("\r\n                                <i class=\"mdi mdi-file\"></i><span class=\"hide-menu\">Cursos</span>\r\n                            ");
                 }
                 );
@@ -259,7 +266,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        </li>\r\n                        <li class=\"sidebar-item\">\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757123204", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757123456", async() => {
                     WriteLiteral("\r\n                                <i class=\"mdi mdi-settings\"></i><span class=\"hide-menu\">Carreras</span>\r\n                            ");
                 }
                 );
@@ -279,7 +286,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        </li>\r\n                        <li class=\"sidebar-item\">\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757125069", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757125321", async() => {
                     WriteLiteral("\r\n                                <i class=\"mdi mdi-calendar\"></i><span class=\"hide-menu\">Periodos</span>\r\n                            ");
                 }
                 );
@@ -299,7 +306,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        </li>\r\n                        <li class=\"sidebar-item\">\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757126934", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757127186", async() => {
                     WriteLiteral("\r\n                                <i class=\"mdi mdi-clock\"></i><span class=\"hide-menu\">Horarios</span>\r\n                            ");
                 }
                 );
@@ -319,7 +326,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        </li>\r\n                        <li class=\"sidebar-item\">\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757128796", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9aae09f3abad3e1135b13b726482e5a8010757129048", async() => {
                     WriteLiteral("\r\n                                <i class=\"mdi mdi-group\"></i><span class=\"hide-menu\">Grupos</span>\r\n                            ");
                 }
                 );

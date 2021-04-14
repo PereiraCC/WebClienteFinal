@@ -26,8 +26,15 @@ using ClienteWebMatricula.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\Views\_ViewImports.cshtml"
+using System.Web;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b09cbb00900335836dc31e83d7f18c01f62432b0", @"/Views/Profesores/Profesores.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6397319dcd6277183256886d68feac87111ca416", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8b135ed3a9a77729d2177c8fff085c457bfba9b5", @"/Views/_ViewImports.cshtml")]
     public class Views_Profesores_Profesores : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<ModelUsuario>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/css/site.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -86,7 +93,7 @@ using ClienteWebMatricula.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b010760", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b011012", async() => {
                 WriteLiteral(@"
     <meta charset=""utf-8"">
     <meta http-equiv=""X-UA-Compatible"" content=""IE=edge"">
@@ -112,7 +119,7 @@ using ClienteWebMatricula.Models;
     <!-- Custom CSS -->
     <link href=""../../dist/css/style.min.css"" rel=""stylesheet"">
     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b09cbb00900335836dc31e83d7f18c01f62432b012466", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b09cbb00900335836dc31e83d7f18c01f62432b012718", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -146,7 +153,7 @@ using ClienteWebMatricula.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b014738", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b014990", async() => {
                 WriteLiteral(@"
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -198,7 +205,7 @@ using ClienteWebMatricula.Models;
                                 </div>
                             <");
                 WriteLiteral("/div>\n                            <!-- End User Profile-->\n                        </li>\n                        <li class=\"sidebar-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b018141", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b018393", async() => {
                     WriteLiteral("\n                                <i class=\"mdi mdi-view-dashboard\"></i><span class=\"hide-menu\">Inicio</span>\n                            ");
                 }
                 );
@@ -218,7 +225,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>\n                        <li class=\"sidebar-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b019996", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b020248", async() => {
                     WriteLiteral("\n                                <i class=\"mdi mdi-face\"></i><span class=\"hide-menu\">Estudiantes</span>\n                            ");
                 }
                 );
@@ -238,7 +245,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>\n                        <li class=\"sidebar-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b021846", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b022098", async() => {
                     WriteLiteral("\n                                <i class=\"mdi mdi-account-settings\"></i><span class=\"hide-menu\">Profesores</span>\n                            ");
                 }
                 );
@@ -258,7 +265,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>\n                        <li class=\"sidebar-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b023707", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b023959", async() => {
                     WriteLiteral("\n                                <i class=\"mdi mdi-file\"></i><span class=\"hide-menu\">Cursos</span>\n                            ");
                 }
                 );
@@ -278,7 +285,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>\n                        <li class=\"sidebar-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b025556", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b025808", async() => {
                     WriteLiteral("\n                                <i class=\"mdi mdi-settings\"></i><span class=\"hide-menu\">Carreras</span>\n                            ");
                 }
                 );
@@ -298,7 +305,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>\n                        <li class=\"sidebar-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b027411", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b027663", async() => {
                     WriteLiteral("\n                                <i class=\"mdi mdi-calendar\"></i><span class=\"hide-menu\">Periodos</span>\n                            ");
                 }
                 );
@@ -318,7 +325,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>\n                        <li class=\"sidebar-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b029266", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b029518", async() => {
                     WriteLiteral("\n                                <i class=\"mdi mdi-clock\"></i><span class=\"hide-menu\">Horarios</span>\n                            ");
                 }
                 );
@@ -338,7 +345,7 @@ using ClienteWebMatricula.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>\n                        <li class=\"sidebar-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b031118", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b031370", async() => {
                     WriteLiteral("\n                                <i class=\"mdi mdi-group\"></i><span class=\"hide-menu\">Grupos</span>\n                            ");
                 }
                 );
@@ -563,7 +570,7 @@ WriteAttributeValue("", 12337, Url.Action("Emails","Profesores",new { id = item.
     <!--Custom JavaScript -->
     <script src=""../../dist/js/custom.js""></script>
     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b044218", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b09cbb00900335836dc31e83d7f18c01f62432b044470", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
