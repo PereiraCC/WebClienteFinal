@@ -30,5 +30,16 @@ namespace ClienteWebMatricula.Models
             return JsonConvert.SerializeObject(this, Formatting.None);
         }
 
+        public string ToJson()
+        {
+            string iden = this.NumeroIdentificacion;
+            string nombre = this.Nombre;
+            string apellidos = this.Apellidos;
+            string fecha = this.FechaNac.ToShortDateString();
+            //return "{NumeroIdentificacion:" + '"' + iden + '"' + "Nombre:" + '"' + nombre + '"' + "Apellidos:" + '"' + apellidos + '"' + "FechaNac:" + '"' + fecha + '"' + '}';
+            return iden + ',' + nombre + ',' + apellidos + ',' + fecha;
+
+        }
+
     }
 }
