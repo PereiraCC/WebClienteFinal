@@ -36,8 +36,8 @@ namespace ClienteWebMatricula.Models
             string nombre = this.Nombre;
             string apellidos = this.Apellidos;
             string fecha = this.FechaNac.ToShortDateString();
-            //return "{NumeroIdentificacion:" + '"' + iden + '"' + "Nombre:" + '"' + nombre + '"' + "Apellidos:" + '"' + apellidos + '"' + "FechaNac:" + '"' + fecha + '"' + '}';
-            return iden + ',' + nombre + ',' + apellidos + ',' + fecha;
+            return "{NumeroIdentificacion:" + '"' + iden + '"' + "Nombre:" + '"' + nombre + '"' + "Apellidos:" + '"' + apellidos + '"' + "FechaNac:" + '"' + fecha + '"' + '}';
+            //return iden + ',' + nombre + ',' + apellidos + ',' + fecha;
 
         }
 

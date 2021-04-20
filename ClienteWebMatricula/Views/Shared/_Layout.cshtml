@@ -21,6 +21,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
+    <link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />
 </head>
 <body>
     @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -122,8 +123,8 @@
                 <div class="modal-header">
                     <h5 class="modal-title"></h5>
                     @*<button type="button" class="Close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">X</span>
-                    </button>*@
+                            <span aria-hidden="true">X</span>
+                        </button>*@
                 </div>
                 <div class="modal-body">
 
@@ -134,6 +135,14 @@
 
     <footer class="border-top footer text-muted">
     </footer>
+
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <div class="loaderbody" id="loaderbody">
+        <div class="loader"></div>
+    </div>
+
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>*@
@@ -147,6 +156,21 @@
     <script src="dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="dist/js/custom.js"></script>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/sweetalert2.all.js"></script>
     @RenderSection("Scripts", required: false)
+    <script>
+        $(function () {
+            $("#loaderbody").addClass('hide');
+            $(document).bind('ajaxStart', function () {
+                $("#loaderbody").removeClass('hide');
+            }).bind('ajaxStop', function () {
+                $("#loaderbody").addClass('hide');
+            });
+        });
+    </script>
 </body>
 </html>

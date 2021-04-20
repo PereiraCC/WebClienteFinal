@@ -61,7 +61,7 @@ namespace ClienteWebMatricula.Data
 
         }
 
-        public string ConnectDELETE(string objeto, string Base2, string codigo)
+        public string ConnectDELETE(string Base2, string codigo)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace ClienteWebMatricula.Data
                     var task = Task.Run(async () =>
                     {
                         return await client.DeleteAsync(
-                            URL_API + Base2 + codigo);
+                            URL_API + Base2 + "?id=" + codigo);
                     }
                     );
                     HttpResponseMessage message = task.Result;
@@ -111,7 +111,7 @@ namespace ClienteWebMatricula.Data
                     var task = Task.Run(async () =>
                     {
                         return await client.PutAsync(
-                            URL_API + Base2 + codigo,
+                            URL_API + Base2 + "?id=" + codigo,
                             new StringContent(objeto, Encoding.UTF8, "application/json")
                         );
                     }

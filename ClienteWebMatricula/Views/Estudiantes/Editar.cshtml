@@ -1,6 +1,6 @@
-﻿@model List<ModelUsuario>
+﻿@model ModelUsuario
 @{
-    ViewData["Title"] = "Estudiantes";
+    ViewData["Title"] = "Editar Estudiantes";
 }
 
 <head>
@@ -154,11 +154,11 @@
                             </nav>
                         </div>
                     </div>
-                    <div class="col-7">
+                    @*<div class="col-7">
                         <div class="text-end upgrade-btn">
                             <a href="#" class="btn btn-success text-white">Nuevo Estudiante</a>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
             </div>
             <!-- ============================================================== -->
@@ -179,48 +179,6 @@
                                 <h6 class="card-subtitle">
                                     Se muestra la tabla de los estudiantes
                                 </h6>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <asp:GridView ID="grvClientes" runat="server" AutoGenerateColumns="false" class="table table-striped">
-                                        <Columns class="col-md-10">
-                                            <asp:TemplateField HeaderText="Prueba" scope="col">
-                                                <ItemTemplate scope="col">Prueba</ItemTemplate>
-                                                <asp:TemplateField HeaderText="Prueba">
-                                                    <ItemTemplate scope="col">Prueba 2</ItemTemplate>
-                                        </Columns>
-                                    </asp:GridView>
-                                    </table>
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Identificacion</th>
-                                                <th scope="col">Nombre</th>
-                                                <th scope="col">Apellidos</th>
-                                                <th scope="col">Fecha Nacimiento</th>
-                                                <th scope="col">Telefonos</th>
-                                                <th scope="col">Emails</th>
-                                                <th scope="col">Opciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (var item in Model)
-                                            {
-                                                <tr>
-                                                    <td>@item.NumeroIdentificacion</td>
-                                                    <td>@item.Nombre</td>
-                                                    <td>@item.Apellidos</td>
-                                                    <td>@item.FechaNac</td>
-                                                    <td><button class="btn btn-success" onclick="showInPopup('@Url.Action("Telefonos","Estudiantes",new { id = item.NumeroIdentificacion},Context.Request.Scheme)','Telefonos')">Ver</button></td>
-                                                    <td><button class="btn btn-success" onclick="showInPopup('@Url.Action("Emails","Estudiantes",new { id = item.NumeroIdentificacion},Context.Request.Scheme)','Emails')">Ver</button></td>
-                                                    <td>
-                                                        <a class="btn" href="https://www.google.co.cr/"><i class=" fa fa-edit"></i></a>
-                                                        <a class="btn" href="https://www.youtube.com/"><i class="fa fa-trash"></i></a>
-                                                    </td>
-                                                </tr>
-                                            }
-                                        </tbody>
-                                    </table>
                             </div>
                         </div>
                     </div>
