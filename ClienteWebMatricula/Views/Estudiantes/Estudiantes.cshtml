@@ -204,8 +204,6 @@
                                                 <td class="edit" id="@persona.NumeroIdentificacion" data-propertyName="Telefonos">@persona.Telefonos</td>
                                                 <td class="edit" id="@persona.NumeroIdentificacion" data-propertyName="Emails">@persona.emails</td>
                                                 <td>
-                                                    @*<a class="btn" href="https://www.google.co.cr/"><i class=" fa fa-edit"></i></a>
-                                                        <a class="btn" href="https://www.youtube.com/"><i class="fa fa-trash-alt"></i></a>*@
                                                     @Html.ActionLink("", "Eliminar", "Estudiantes", new { id = persona.NumeroIdentificacion }, new { @class = "btn fa fa-trash-alt" })
                                                 </td>
                                             </tr>

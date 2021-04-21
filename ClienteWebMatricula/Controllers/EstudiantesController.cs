@@ -48,7 +48,7 @@ namespace ClienteWebMatricula.Controllers
 
             if (res.Equals("1"))
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Estudiantes", "Estudiantes");
             }
 
             return View();
@@ -61,10 +61,10 @@ namespace ClienteWebMatricula.Controllers
 
             if (res.Equals("1"))
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Estudiantes", "Estudiantes");
             }
 
-            return View();
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Emails(string id)

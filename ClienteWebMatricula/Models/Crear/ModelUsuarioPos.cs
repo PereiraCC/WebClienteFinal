@@ -107,5 +107,66 @@ namespace ClienteWebMatricula.Models.Crear
 
         }
 
+        public void cargarDatosNuevos(Profesor profesor)
+        {
+            try
+            {
+                //ModelUsuario temp = new ModelUsuario();
+                List<Email> emails = new List<Email>();
+                List<Telefono> telefonos = new List<Telefono>();
+
+                this.Nombre = profesor.nombre;
+                this.Apellidos = profesor.Apellidos;
+                this.NumeroIdentificacion = profesor.NumeroIdentificacion;
+                if (profesor.idtipoIdentificacion.Equals("Cédula de Identidad"))
+                {
+                    this.idTipoIdentificacion = "1";
+                }
+                else if (profesor.idtipoIdentificacion.Equals("DIMEX"))
+                {
+                    this.idTipoIdentificacion = "2";
+                }
+                else if (profesor.idtipoIdentificacion.Equals("Cédula de Residencia"))
+                {
+                    this.idTipoIdentificacion = "3";
+                }
+                else
+                {
+                    this.idTipoIdentificacion = "4";
+                }
+                this.FechaNac = profesor.fechanacimiento;
+                this.idTipoUsuario = "1";
+                string[] tempEmail = profesor.emails.Split('/');
+                string[] tempTel = profesor.Telefonos.Split('/');
+
+                foreach (string t in tempEmail)
+                {
+                    Email email = new Email();
+                    email.email = t;
+
+                    emails.Add(email);
+
+                }
+                this.Emails = emails;
+
+                foreach (string t in tempTel)
+                {
+                    Telefono telefono = new Telefono();
+                    telefono.telefono = t;
+
+                    telefonos.Add(telefono);
+
+                }
+                this.Telefonos = telefonos;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
     }
 }

@@ -193,7 +193,6 @@ C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Pro
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Profesores\Emails.cshtml.g.cs
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Profesores\Telefonos.cshtml.g.cs
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Estudiantes\Estudiantes.cshtml.g.cs
-C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Estudiantes\Editar.cshtml.g.cs
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
@@ -202,3 +201,7 @@ C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Pro
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
 C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Estudiantes\Crear.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Profesores\Crear.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Carreras\Crear.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Cursos\Crear.cshtml.g.cs
+C:\Users\PereiraCoto\Documents\Personal\Cuatrimestre\Programacion5\Proyectos\Proyecto2\ClienteWebMatricula\ClienteWebMatricula\obj\Debug\netcoreapp3.1\Razor\Views\Periodos\Crear.cshtml.g.cs

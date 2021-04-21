@@ -73,17 +73,82 @@ namespace ClienteWebMatricula.Models.Modificar
                 }
 
                 this.FechaNac = estudiante.fechanacimiento;
-                if(estudiante.idtipoUsuario.Equals("Estudiante"))
-                {
-                    this.idTipoUsuario = "2";
-                }
-                else
-                {
-                    this.idTipoUsuario = "1";
-                }
+                this.idTipoUsuario = "2";
                 
                 string[] tempEmail = estudiante.emails.Split('/');
                 string[] tempTel = estudiante.Telefonos.Split('/');
+
+                foreach (string t in tempEmail)
+                {
+                    if (!String.IsNullOrEmpty(t))
+                    {
+                        Email email = new Email();
+                        email.email = t;
+                        //email.idUsuario = estudiante.idusuario;
+
+                        emails.Add(email);
+                    }
+
+                }
+                this.Emails = emails;
+
+                foreach (string t in tempTel)
+                {
+                    if (!String.IsNullOrEmpty(t))
+                    {
+                        Telefono telefono = new Telefono();
+                        telefono.telefono = t;
+                        //telefono.idUsuario = estudiante.idusuario;
+
+                        telefonos.Add(telefono);
+                    }
+
+                }
+                this.Telefonos = telefonos;
+                //return temp;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        public void cargarDatosNuevos(Profesor profesor)
+        {
+            try
+            {
+                //ModelUsuario temp = new ModelUsuario();
+                List<Email> emails = new List<Email>();
+                List<Telefono> telefonos = new List<Telefono>();
+
+                this.Nombre = profesor.nombre;
+                this.Apellidos = profesor.Apellidos;
+                this.NumeroIdentificacion = profesor.NumeroIdentificacion;
+                if (profesor.idtipoIdentificacion.Equals("Cedula Identidad"))
+                {
+                    this.idTipoIdentificacion = "1";
+                }
+                else if (profesor.idtipoIdentificacion.Equals("DIMEX"))
+                {
+                    this.idTipoIdentificacion = "2";
+                }
+                else if (profesor.idtipoIdentificacion.Equals("Cedula Residencia"))
+                {
+                    this.idTipoIdentificacion = "3";
+                }
+                else if (profesor.idtipoIdentificacion.Equals("Pasaporte"))
+                {
+                    this.idTipoIdentificacion = "4";
+                }
+
+                this.FechaNac = profesor.fechanacimiento;
+                this.idTipoUsuario = "2";
+
+                string[] tempEmail = profesor.emails.Split('/');
+                string[] tempTel = profesor.Telefonos.Split('/');
 
                 foreach (string t in tempEmail)
                 {

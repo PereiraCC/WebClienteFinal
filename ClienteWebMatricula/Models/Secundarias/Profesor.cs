@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Threading.Tasks;
 
 namespace ClienteWebMatricula.Models.Secundarias
 {
-    public class Estudiante
+    public class Profesor
     {
-
         public string nombre { get; set; }
-        public  string Apellidos { get; set; }
+        public string Apellidos { get; set; }
         public string NumeroIdentificacion { get; set; }
         public string idtipoIdentificacion { get; set; }
-        
+
         public string idtipoUsuario { get; set; }
 
         public string Telefonos { get; set; }
@@ -24,38 +23,36 @@ namespace ClienteWebMatricula.Models.Secundarias
         public List<string> tiposIdentificacion { get; set; }
 
         public int idusuario { get; set; }
-        public Estudiante()
+        public Profesor()
         {
-            
-
         }
 
-        public Estudiante CargarDatosNuevos (ModelUsuario estudiante)
+        public Profesor CargarDatosNuevos(ModelUsuario profesor)
         {
-            Estudiante t = new Estudiante();
-            t.nombre = estudiante.Nombre;
-            t.Apellidos = estudiante.Apellidos;
-            t.NumeroIdentificacion = estudiante.NumeroIdentificacion;
-            t.idtipoIdentificacion = estudiante.TipoIdentificacion;
-            t.idtipoUsuario = estudiante.TipoUsuario;
-            t.fechanacimiento = estudiante.FechaNac;
+            Profesor t = new Profesor();
+            t.nombre = profesor.Nombre;
+            t.Apellidos = profesor.Apellidos;
+            t.NumeroIdentificacion = profesor.NumeroIdentificacion;
+            t.idtipoIdentificacion = profesor.TipoIdentificacion;
+            t.idtipoUsuario = profesor.TipoUsuario;
+            t.fechanacimiento = profesor.FechaNac;
             string tempEmail = null;
             string tempTel = null;
-            foreach (ModelTelefonos temp in estudiante.Telefonos)
+            foreach (ModelTelefonos temp in profesor.Telefonos)
             {
                 string y = temp.telefono + "/";
                 tempTel = tempTel + y;
             }
             t.Telefonos = tempTel;
 
-            foreach (ModelEmails temp in estudiante.Emails)
+            foreach (ModelEmails temp in profesor.Emails)
             {
                 string j = temp.email + "/";
                 tempEmail = tempEmail + j;
             }
             t.emails = tempEmail;
             int Tempidusuario = 0;
-            foreach (ModelEmails temp in estudiante.Emails)
+            foreach (ModelEmails temp in profesor.Emails)
             {
                 Tempidusuario = temp.idUsuario;
 
@@ -65,9 +62,5 @@ namespace ClienteWebMatricula.Models.Secundarias
             return t;
 
         }
-
-        
-
-
     }
 }

@@ -1,5 +1,7 @@
-﻿@model List<PeriodosModel>
-@{ ViewData["Title"] = "Periodos"; }
+﻿@model ModelCarreras
+@{
+    ViewData["Title"] = "Registro Carreras";
+}
 
 <head>
     <meta charset="utf-8">
@@ -142,19 +144,15 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Mantenimiento de Periodos</h4>
+                        <h4 class="page-title">Mantenimiento de Carreras</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Periodos</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Carreras</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Crear Nueva Carrera</li>
                                 </ol>
                             </nav>
-                        </div>
-                    </div>
-                    <div class="col-7">
-                        <div class="text-end upgrade-btn">
-                            <a asp-controller="Periodos" asp-action="Crear" class="btn btn-success text-white">Nuevo Periodo</a>
                         </div>
                     </div>
                 </div>
@@ -169,159 +167,65 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Periodos</h4>
-                                <h6 class="card-subtitle">
-                                    Se muestra la tabla de los periodos
-                                </h6>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-striped" id="tabla">
-                                    <thead>
-                                        <tr>
-
-                                            <th scope="col">Número de período</th>
-                                            <th scope="col">Fecha Inicio del Período</th>
-                                            <th scope="col">Fecha Fin del Período</th>
-                                            <th scope="col">Activo</th>
-                                            <th scope="col">Opciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var item in Model)
-                                        {
-                                        <tr>
-                                            <td id="@item.Numero" data-propertyName="Numero">@item.Numero</td>
-                                            <td class="edit" id="@item.Numero" data-propertyName="FechaInicial">@Html.FormatValue(item.FechaInicial, "{0:dd/MM/yyy}")</td>
-                                            <td class="edit" id="@item.Numero" data-propertyName="FechaFinal">@Html.FormatValue(item.FechaFinal, "{0:dd/MM/yyy}")</td>
-                                            @if (item.activo)
-                                            {
-                                                <td class="edit" id="@item.Numero" data-propertyName="Activo">Si</td>
-                                            }
-                                            else
-                                            {
-                                                <td class="edit" id="@item.Numero" data-propertyName="Activo">No</td>
-                                            }
-
-                                            <td>
-                                                @Html.ActionLink("", "Eliminar", "Periodos", new { id = item.Numero }, new { @class = "btn fa fa-trash-alt" })
-                                            </td>
-                                        </tr>
-                                         }
-                                    </tbody>
-                                </table>
-                            </div>
+                <!-- Mantenimiento Profesores -->
+                <div class="col-lg-8 col-xlg-9 col-md-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="form-horizontal form-material mx-2" asp-controller="Carreras" asp-action="Crear">
+                                <div class="form-group">
+                                    <label class="col-md-12">Codigo Carrera</label>
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @class = "form-control form-control-line" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Nombre Carrera</label>
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control form-control-line" } })
+                                    </div>
+                                </div>
+                               
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="submit" value="Registrar Carrera" class="btn btn-success text-white" />
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <!-- ============================================================== -->
-                <!-- End PAge Content -->
+                <!-- End Container fluid  -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
-                <!-- Right sidebar -->
+                <!-- footer -->
                 <!-- ============================================================== -->
-                <!-- .right-sidebar -->
+                <footer class="footer text-center">
+                    Todos los derechos reservados. Sistema de Matricula.
+                </footer>
                 <!-- ============================================================== -->
-                <!-- End Right sidebar -->
+                <!-- End footer -->
                 <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer text-center">
-                Todos los derechos reservados. Sistema de Matricula.
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
+            <!-- End Page wrapper  -->
             <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
+        <!-- End Wrapper -->
         <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../dist/js/app-style-switcher.js"></script>
-    <!--Wave Effects -->
-    <script src="../../dist/js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="../../dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="../../dist/js/custom.js"></script>
-    <script src="~/js/site.js"></script>
+        <!-- ============================================================== -->
+        <!-- All Jquery -->
+        <!-- ============================================================== -->
+        <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../../dist/js/app-style-switcher.js"></script>
+        <!--Wave Effects -->
+        <script src="../../dist/js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="../../dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="../../dist/js/custom.js"></script>
+        <script src="~/js/site.js"></script>
 </body>
-@section scripts {
-    <script src="~/Scripts/jquery.jeditable.min.js"></script>
-    <script>
-        $(function () {
-            $(".table").DataTable();
-            $(".edit").editable("/Periodos/Actualizar", {
-                submitdata: function () {
-                    return {
-                        PropertyName: $(this).data("propertyname")
-                        //$(this).text(jsonData.value);
-                    }
-                },
-                //Función para poder recibir el nuevo valor y mostrarlo
-                callback: function (value, settings) {
-                    var jsonData = $.parseJSON(value);
-                    if (jsonData.status) {
-                        $(this).text(jsonData.value);
-                    }
-                    else {
-                        $(this).text(jsonData.mensaje);
-                    }
-                }
-            });
-            $("#listarConAjax").click(function (event) {
-                event.preventDefault();
-                var tabla = $("#tabla").DataTable();
-                tabla.destroy();
-                $.ajax({
-                    url: "/Estudiante/ListarAjax",
-                    success: function (resultado) {
-                        $("#tabla").DataTable({
-                            sort: false,
-                            data: resultado.data,
-                            columns: [
-                                { "data": "NumeroIdentificacion" },
-                                { "data": "Nombre" },
-                                { "data": "Apellidos" },
-                                {
-                                    "data": "FechaNac", "render": function (data, row, type, meta) {
-                                        if (data != undefined) {
-                                            var milisegundos = parseInt(data.replace("/Date(", "").replace(")/", ""));
-                                            return new Date(milisegundos).toLocaleDateString("en-UE");
-                                        }
-                                        else {
-                                            return data;
-                                        }
-                                    }
-                                },
-                                {
-                                    "data": "NumeroIdentificacion", "render": function (data, row, type, meta) {
-                                        return "<a class='btn btn-warning' href='/Estudiante/Editar/" + data + "'>Editar</a>" +
-                                            " " + "<a class='btn btn-danger' href='/Estudiante/Borrar/" + data + "'>Borrar</a>"
-                                    }
-                                }
-                            ]
-                        })
-                    }
-                });
-            });
-        });
-    </script>
-}
