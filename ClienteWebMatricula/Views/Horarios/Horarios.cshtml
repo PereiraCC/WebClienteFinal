@@ -156,7 +156,7 @@
                     </div>
                     <div class="col-7">
                         <div class="text-end upgrade-btn">
-                            <a href="#" class="btn btn-success text-white">Nuevo Horario</a>
+                            <a asp-controller="Horarios" asp-action="Crear" class="btn btn-success text-white">Nuevo Horario</a>
                         </div>
                     </div>
                 </div>
@@ -181,7 +181,7 @@
                                 </h6>
                             </div>
                             <div class="table-responsive">
-                                <table class="table table-striped">
+                                <table class="table table-striped" id="tabla">
                                     <thead>
                                         <tr>
                                             <th scope="col">Codigo</th>
@@ -196,12 +196,11 @@
                                         {
                                             <tr>
                                                 <td>@item.Codigo</td>
-                                                <td>@item.Dia</td>
-                                                <td>@item.HoraInicio</td>
-                                                <td>@item.HoraFinal</td>
+                                                <td class="editable-select" id="@item.Codigo" data-propertyName="Dia">@item.Dia</td>
+                                                <td class="edit" id="@item.Codigo" data-propertyName="HoraInicio">@item.HoraInicio</td>
+                                                <td class="edit" id="@item.Codigo" data-propertyName="HoraFinal">@item.HoraFinal</td>
                                                 <td>
-                                                    <a class="btn" href="https://www.google.co.cr/"><i class=" fa fa-edit"></i></a>
-                                                    <a class="btn" href="https://www.youtube.com/"><i class="fa fa-trash"></i></a>
+                                                    @Html.ActionLink("", "Eliminar", "Horarios", new { id = item.Codigo }, new { @class = "btn fa fa-trash-alt" })
                                                 </td>
                                             </tr>
                                         }
@@ -257,3 +256,85 @@
     <script src="../../dist/js/custom.js"></script>
     <script src="~/js/site.js"></script>
 </body>
+@section scripts {
+    <script src="~/Scripts/jquery.jeditable.min.js"></script>
+    <script>
+        $(function () {
+            $(".table").DataTable();
+            $(".edit").editable("/Horarios/Actualizar", {
+                submitdata: function () {
+                    return {
+                        PropertyName: $(this).data("propertyname")
+                        //$(this).text(jsonData.value);
+                    }
+                },
+                //Función para poder recibir el nuevo valor y mostrarlo
+                callback: function (value, settings) {
+                    var jsonData = $.parseJSON(value);
+                    if (jsonData.status) {
+                        $(this).text(jsonData.value);
+                    }
+                    else {
+                        $(this).text(jsonData.mensaje);
+                    }
+                }
+            });
+            $(".editable-select").editable("/Horarios/Actualizar", {
+                loadurl: "/Horarios/cargarDiasModificar",
+                type: "select",
+                submit: "Ok",
+                cssclass: "form-control",
+                submitcssclass: 'btn btn-success',
+                submitdata: function () {
+                    return { PropertyName: $(this).data("propertyname") };
+                },
+                //Función para poder recibir el nuevo valor y mostrarlo
+                callback: function (value, settings) {
+                    var jsonData = $.parseJSON(value);
+                    if (jsonData.status) {
+                        $(this).text(jsonData.value);
+                    }
+                    else {
+                        $(this).text(jsonData.mensaje);
+                    }
+                }
+            });
+            $("#listarConAjax").click(function (event) {
+                event.preventDefault();
+                var tabla = $("#tabla").DataTable();
+                tabla.destroy();
+                $.ajax({
+                    url: "/Estudiante/ListarAjax",
+                    success: function (resultado) {
+                        $("#tabla").DataTable({
+                            sort: false,
+                            data: resultado.data,
+                            columns: [
+                                { "data": "NumeroIdentificacion" },
+                                { "data": "Nombre" },
+                                { "data": "Apellidos" },
+                                {
+                                    "data": "FechaNac", "render": function (data, row, type, meta) {
+                                        if (data != undefined) {
+                                            var milisegundos = parseInt(data.replace("/Date(", "").replace(")/", ""));
+                                            return new Date(milisegundos).toLocaleDateString("en-UE");
+                                        }
+                                        else {
+                                            return data;
+                                        }
+                                    }
+                                },
+                                {
+                                    "data": "NumeroIdentificacion", "render": function (data, row, type, meta) {
+                                        return "<a class='btn btn-warning' href='/Estudiante/Editar/" + data + "'>Editar</a>" +
+                                            " " + "<a class='btn btn-danger' href='/Estudiante/Borrar/" + data + "'>Borrar</a>"
+                                    }
+                                }
+                            ]
+                        })
+                    }
+                });
+            });
+        });
+    </script>
+}

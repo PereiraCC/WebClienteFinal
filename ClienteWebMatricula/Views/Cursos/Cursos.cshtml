@@ -194,7 +194,7 @@
                             <tr>
                                 <td id="@item.Codigo" data-propertyName="Codigo">@item.Codigo</td>
                                 <td class="edit" id="@item.Codigo" data-propertyName="Nombre">@item.Nombre</td>
-                                <td class="edit" id="@item.Codigo" data-propertyName="NombreCarrera">@item.NombreCarrera</td>
+                                <td class="editable-select" id="@item.Codigo" data-propertyName="NombreCarrera">@item.NombreCarrera</td>
                                 <td>
                                     @Html.ActionLink("", "Eliminar", "Cursos", new { id = item.Codigo }, new { @class = "btn fa fa-trash-alt" })
                                 </td>
@@ -262,6 +262,26 @@
                         PropertyName: $(this).data("propertyname")
                         //$(this).text(jsonData.value);
                     }
+                },
+                //Función para poder recibir el nuevo valor y mostrarlo
+                callback: function (value, settings) {
+                    var jsonData = $.parseJSON(value);
+                    if (jsonData.status) {
+                        $(this).text(jsonData.value);
+                    }
+                    else {
+                        $(this).text(jsonData.mensaje);
+                    }
+                }
+            });
+            $(".editable-select").editable("/Cursos/Actualizar", {
+                loadurl: "/Cursos/cargarCarrerasModificar",
+                type: "select",
+                submit: "Ok",
+                cssclass: "form-control",
+                submitcssclass: 'btn btn-success',
+                submitdata: function () {
+                    return { PropertyName: $(this).data("propertyname") };
                 },
                 //Función para poder recibir el nuevo valor y mostrarlo
                 callback: function (value, settings) {

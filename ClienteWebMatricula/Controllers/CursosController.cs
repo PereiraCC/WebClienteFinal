@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ClienteWebMatricula.Controllers
@@ -82,7 +83,15 @@ namespace ClienteWebMatricula.Controllers
                     mensaje = "Valor modificado";
                 }
 
-                return Json(new { value = value, status = status, mensaje = mensaje });
+                if (PropertyName.Equals("NombreCarrera"))
+                {
+                    return Json(new { value = obtenerNombreCarrera(value), status = status, mensaje = mensaje });
+                }
+                else
+                {
+                    return Json(new { value = value, status = status, mensaje = mensaje });
+                }
+               
 
             }
             else
@@ -116,7 +125,7 @@ namespace ClienteWebMatricula.Controllers
                         }
                         else if (p.Equals("NombreCarrera"))
                         {
-                            t.NombreCarrera = cambio;
+                            t.NombreCarrera = obtenerNombreCarrera(cambio);
                         }
                     }
 
@@ -188,6 +197,29 @@ namespace ClienteWebMatricula.Controllers
             }
         }
 
+        public string obtenerNombreCarrera(string id)
+        {
+            try
+            {
+                CarrerasController controller = new CarrerasController();
+                List<ModelCarreras> carreras = controller.ConnectGET();
+                
+                foreach(ModelCarreras temp in carreras)
+                {
+                    if (temp.Codigo.Equals(id))
+                    {
+                        return temp.Nombre;
+                    }
+                }
+
+                return "Sin Nombre";
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<string> cargarCarreras()
         {
 
@@ -223,6 +255,46 @@ namespace ClienteWebMatricula.Controllers
                 }
             }
             catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string cargarCarrerasModificar()
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                List<string> carreras = new List<string>();
+                List<ModelCarreras> lista = null;
+
+                using (var client = new HttpClient())
+                {
+                    var task = Task.Run(async () =>
+                    {
+                        return await client.GetAsync(URL_Carreras);
+                    }
+                    );
+                    HttpResponseMessage message = task.Result;
+                    if (message.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var task2 = Task<string>.Run(async () =>
+                        {
+                            return await message.Content.ReadAsStringAsync();
+                        });
+                        string mens = task2.Result;
+                        lista = JsonConvert.DeserializeObject<List<ModelCarreras>>(mens);
+                    }
+
+                    foreach (ModelCarreras item in lista)
+                    {
+                        sb.Append(string.Format("'{0}':'{1}',", item.Codigo, item.Nombre));
+                    }
+                }
+                     
+                return "{" + sb.ToString() + "}";
+            }
+            catch(Exception ex)
             {
                 throw ex;
             }

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ClienteWebMatricula.Controllers
@@ -27,8 +28,7 @@ namespace ClienteWebMatricula.Controllers
         [HttpGet]
         public ActionResult Crear()
         {
-            string[] opciones = { "Si", "No" };
-            ViewBag.opciones = opciones;
+            ViewBag.opciones = cargarOpcionesModificar();
             return View("Crear");
         }
 
@@ -50,6 +50,7 @@ namespace ClienteWebMatricula.Controllers
 
         public ActionResult Actualizar(string id, string PropertyName, string value)
         {
+            bool band = false;
             bool status = false;
             string mensaje = "No Modificado";
 
@@ -68,10 +69,12 @@ namespace ClienteWebMatricula.Controllers
                         if (t.activo.Equals("Si"))
                         {
                             per.activo = true;
+                            band = true;
                         }
                         else
                         {
                             per.activo = false;
+                            band = false;
                         }
                         
                     }
@@ -85,7 +88,23 @@ namespace ClienteWebMatricula.Controllers
                     mensaje = "Valor modificado";
                 }
 
-                return Json(new { value = value, status = status, mensaje = mensaje });
+                if (PropertyName.Equals("Activo"))
+                {
+                    if(band == true)
+                    {
+                        return Json(new { value = "Si", status = status, mensaje = mensaje });
+                    }
+                    else
+                    {
+                        return Json(new { value = "No", status = status, mensaje = mensaje });
+                    }
+                    
+                }
+                else
+                {
+                    return Json(new { value = value, status = status, mensaje = mensaje });
+                }
+                    
 
             }
             else
@@ -123,7 +142,15 @@ namespace ClienteWebMatricula.Controllers
                         }
                         else if (p.Equals("Activo"))
                         {
-                            t.activo = cambio;
+                            if (cambio.Equals("0"))
+                            {
+                                t.activo = "Si";
+                            }
+                            else
+                            {
+                                t.activo = "No";
+                            }
+                            
                         }
                     }
 
@@ -188,6 +215,19 @@ namespace ClienteWebMatricula.Controllers
                     }
                     return lista;
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string[] cargarOpcionesModificar()
+        {
+            try
+            {
+                string[] opciones = { "Si", "No" };
+                return opciones;
             }
             catch (Exception ex)
             {
