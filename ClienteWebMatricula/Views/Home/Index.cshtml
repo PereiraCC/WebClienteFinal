@@ -1,6 +1,5 @@
 ﻿@{
-    string data = "toby";
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Universidad ABC";
 }
 
 <head>
@@ -13,7 +12,7 @@
     <meta name="description"
           content="Xtreme Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>@ViewData["Title"]</title>
+    <title>Universidad ABC</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" type="text/javascript"></script>
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtreme-admin-lite/" />
@@ -27,226 +26,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script type="text/javascript">
-        $(document).ready(function ($) {
-            var ajax_data =
-                [
-                    { identificacion: "11110000", Nombre: "Carlos", Apellidos: "Pereira", FechaNacimiento: "01/03/2000" },
-                    { identificacion: "55550000", Nombre: "Maria", Apellidos: "Martinez", FechaNacimiento: "01/03/2000" },
-                ]
-
-            var random_id = function () {
-                var id_num = Math.random().toString(9).substr(2, 3);
-                var id_str = Math.random().toString(36).substr(2);
-
-                return id_num + id_str;
-            }
-
-            var tbl = '';
-            tbl += '<table class="table table-striped">'
-
-            //--->create table header > start
-            tbl += '<thead>';
-            tbl += '<tr>';
-            tbl += '<th>Identificacion</th>';
-            tbl += '<th>Nombre</th>';
-            tbl += '<th>Apellidos</th>';
-            tbl += '<th>FechaNacimiento</th>';
-            tbl += '<th>Options</th>';
-            tbl += '</tr>';
-            tbl += '</thead>';
-            //--->create table header > end
-
-
-            //--->create table body > start
-            tbl += '<tbody>';
-
-            //--->create table body rows > start
-            $.each(ajax_data, function (index, val) {
-                //you can replace with your database row id
-                var row_id = random_id();
-
-                //loop through ajax row data
-                tbl += '<tr row_id="' + row_id + '">';
-                tbl += '<td ><div class="row_data" edit_type="click" col_name="identificacion">' + val['identificacion'] + '</div></td>';
-                tbl += '<td ><div class="row_data" edit_type="click" col_name="Nombre">' + val['Nombre'] + '</div></td>';
-                tbl += '<td ><div class="row_data" edit_type="click" col_name="Apellidos">' + val['Apellidos'] + '</div></td>';
-                tbl += '<td ><div class="row_data" edit_type="click" col_name="FechaNacimiento">' + val['FechaNacimiento'] + '</div></td>';
-
-                //--->edit options > start
-                tbl += '<td>';
-
-                tbl += '<span class="btn_edit" > <a href="#" class="btn btn-link " row_id="' + row_id + '" > Editar</a> </span>';
-
-                //only show this button if edit button is clicked
-                tbl += '<span class="btn_save"> <a href="#" class="btn btn-link"  row_id="' + row_id + '"> Guardar</a> | </span>';
-                tbl += '<span class="btn_cancel"> <a href="#" class="btn btn-link" row_id="' + row_id + '"> Cancelar</a> | </span>';
-
-                tbl += '</td>';
-                //--->edit options > end
-
-                tbl += '</tr>';
-            });
-
-            //--->create table body rows > end
-
-            tbl += '</tbody>';
-            //--->create table body > end
-
-            tbl += '</table>'
-
-            $(document).find('.tbl_user_data').html(tbl);
-
-            $(document).find('.btn_save').hide();
-            $(document).find('.btn_cancel').hide();
-
-            $(document).on('click', '.row_data', function (event) {
-                event.preventDefault();
-
-                if ($(this).attr('edit_type') == 'button') {
-                    return false;
-                }
-
-                //make div editable
-                $(this).closest('div').attr('contenteditable', 'true');
-                //add bg css
-                $(this).addClass('bg-warning').css('padding', '5px');
-
-                $(this).focus();
-            })
-            //--->make div editable > end
-
-            //--->save single field data > start
-            $(document).on('focusout', '.row_data', function (event) {
-                event.preventDefault();
-
-                if ($(this).attr('edit_type') == 'button') {
-                    return false;
-                }
-
-                var row_id = $(this).closest('tr').attr('row_id');
-
-                var row_div = $(this)
-                    .removeClass('bg-warning') //add bg css
-                    .css('padding', '')
-
-                var col_name = row_div.attr('col_name');
-                var col_val = row_div.html();
-
-                var arr = {};
-                arr[col_name] = col_val;
-
-                //use the "arr"	object for your ajax call
-                $.extend(arr, { row_id: row_id });
-
-                //out put to show
-                $('.post_msg').html('<pre class="bg-success">' + JSON.stringify(arr, null, 2) + '</pre>');
-
-            })
-            //--->save single field data > end
-
-            //--->button > edit > start
-            $(document).on('click', '.btn_edit', function (event) {
-                event.preventDefault();
-                var tbl_row = $(this).closest('tr');
-
-                var row_id = tbl_row.attr('row_id');
-
-                tbl_row.find('.btn_save').show();
-                tbl_row.find('.btn_cancel').show();
-
-                //hide edit button
-                tbl_row.find('.btn_edit').hide();
-
-                //make the whole row editable
-                tbl_row.find('.row_data')
-                    .attr('contenteditable', 'true')
-                    .attr('edit_type', 'button')
-                    .addClass('bg-warning')
-                    .css('padding', '3px')
-
-                //--->add the original entry > start
-                tbl_row.find('.row_data').each(function (index, val) {
-                    //this will help in case user decided to click on cancel button
-                    $(this).attr('original_entry', $(this).html());
-                });
-                //--->add the original entry > end
-
-            });
-            //--->button > edit > end
-
-            //--->button > cancel > start
-            $(document).on('click', '.btn_cancel', function (event) {
-                event.preventDefault();
-
-                var tbl_row = $(this).closest('tr');
-
-                var row_id = tbl_row.attr('row_id');
-
-                //hide save and cacel buttons
-                tbl_row.find('.btn_save').hide();
-                tbl_row.find('.btn_cancel').hide();
-
-                //show edit button
-                tbl_row.find('.btn_edit').show();
-
-                //make the whole row editable
-                tbl_row.find('.row_data')
-                    .attr('edit_type', 'click')
-                    .removeClass('bg-warning')
-                    .css('padding', '')
-
-                tbl_row.find('.row_data').each(function (index, val) {
-                    $(this).html($(this).attr('original_entry'));
-                });
-            });
-            //--->button > cancel > end
-
-            //--->save whole row entery > start
-            $(document).on('click', '.btn_save', function (event) {
-                event.preventDefault();
-                var tbl_row = $(this).closest('tr');
-
-                var row_id = tbl_row.attr('row_id');
-
-
-                //hide save and cacel buttons
-                tbl_row.find('.btn_save').hide();
-                tbl_row.find('.btn_cancel').hide();
-
-                //show edit button
-                tbl_row.find('.btn_edit').show();
-
-
-                //make the whole row editable
-                tbl_row.find('.row_data')
-                    .attr('edit_type', 'click')
-                    .removeClass('bg-warning')
-                    .css('padding', '')
-
-                //--->get row data > start
-                var arr = {};
-                tbl_row.find('.row_data').each(function (index, val) {
-                    var col_name = $(this).attr('col_name');
-                    var col_val = $(this).html();
-                    arr[col_name] = col_val;
-                });
-                //--->get row data > end
-
-                //use the "arr"	object for your ajax call
-                $.extend(arr, { row_id: row_id });
-
-                //out put to show
-                $('.post_msg').html('<pre class="bg-success">' + JSON.stringify(arr, null, 2) + '</pre>')
-
-
-            });
-            //--->save whole row entery > end
-        });
-    </script>
 </head>
-
 <body>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -363,62 +143,200 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Mantenimiento de Estudiantes</h4>
+                        <h4 class="page-title">Universidad ABC</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Estudiantes</li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
+
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-7">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Estudiantes</h4>
-                                <h6 class="card-subtitle">
-                                    Se muestra la tabla de los estudiantes
-                                </h6>
-                            </div>
-                            <div class="table-responsive">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><b> Demo </b> </div>
-
-                                    <div class="panel-body">
-
-                                        <div class="tbl_user_data"></div>
-
+                                <div class="d-md-flex align-items-center">
+                                    <div>
+                                        <h4 class="card-title">Universidad ABC</h4>
+                                        <h5 class="card-subtitle">Logo</h5>
                                     </div>
-
+                                </div>
+                                <div class="row">
+                                    <!-- column -->
+                                    <div class="col-lg-6">
+                                        <div class="">
+                                            <img width="500" src="~/assets/images/logo.jpg" />
+                                        </div>
+                                    </div>
+                                    <!-- column -->
                                 </div>
                             </div>
                         </div>
-                    </div>        
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Mantenimientos</h4>
+                                <div class="feed-widget">
+                                    <ul class="list-style-none feed-body m-0 p-b-20">
+                                        <li class="feed-item">
+                                            <div class="feed-icon bg-info"><i class="mdi mdi-face"></i></div>
+                                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                               asp-controller="Estudiantes" asp-action="Estudiantes" aria-expanded="false">
+                                                <span class="hide-menu">Estudiantes</span>
+                                            </a>
+                                        </li>
+                                        <li class="feed-item">
+                                            <div class="feed-icon bg-success"><i class="mdi mdi-account-settings"></i></div>
+                                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                               asp-controller="Profesores" asp-action="Profesores" aria-expanded="false">
+                                                <span class="hide-menu">Profesores</span>
+                                            </a>
+                                        </li>
+                                        <li class="feed-item">
+                                            <div class="feed-icon bg-warning"><i class="mdi mdi-file"></i></div>
+                                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                               asp-controller="Cursos" asp-action="Cursos" aria-expanded="false">
+                                                <span class="hide-menu">Cursos</span>
+                                            </a>
+                                        </li>
+                                        <li class="feed-item">
+                                            <div class="feed-icon bg-danger"><i class="mdi mdi-group"></i></div>
+                                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                               asp-controller="Grupos" asp-action="Grupos" aria-expanded="false">
+                                                <span class="hide-menu">Grupos</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Comentarios</h4>
+                            </div>
+                            <div class="comment-widgets scrollable">
+                                <!-- Comment Row -->
+                                <div class="d-flex flex-row comment-row m-t-0">
+                                    <div class="p-2">
+                                        <img src="../../assets/images/users/1.jpg" alt="user" width="50"
+                                             class="rounded-circle">
+                                    </div>
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium">Juan Perez</h6>
+                                        <span class="m-b-15 d-block">
+                                            La Universidad ABC es la mejor inversion a futuro.
+                                        </span>
+                                        <div class="comment-footer">
+                                            <span class="text-muted float-end">Enero 14, 2020</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Comment Row -->
+                                <div class="d-flex flex-row comment-row">
+                                    <div class="p-2">
+                                        <img src="../../assets/images/users/4.jpg" alt="user" width="50"
+                                             class="rounded-circle">
+                                    </div>
+                                    <div class="comment-text active w-100">
+                                        <h6 class="font-medium">Maria Mora</h6>
+                                        <span class="m-b-15 d-block">
+                                            El futuro es ahora, para eso esta la Universidad ABC
+                                        </span>
+                                        <div class="comment-footer ">
+                                            <span class="text-muted float-end">Agosto 24, 2019</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Comment Row -->
+                                <div class="d-flex flex-row comment-row">
+                                    <div class="p-2">
+                                        <img src="../../assets/images/users/5.jpg" alt="user" width="50"
+                                             class="rounded-circle">
+                                    </div>
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium">Marcos Gonzalez</h6>
+                                        <span class="m-b-15 d-block">
+                                            Programa tu presente y futuro en la Universidad ABC
+                                        </span>
+                                        <div class="comment-footer">
+                                            <span class="text-muted float-end">Noviembre 06, 2018</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- column -->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Nuestros datos</h4>
+                                <div class="d-flex align-items-center flex-row m-t-30">
+                                    <div class="display-5 text-info">
+                                        <i class="fa fa-trophy"></i>
+                                        <span>+200</span>
+                                    </div>
+                                    <div class="m-l-10">
+                                        <h3 class="m-b-0">Universidad ABC</h3><small>A nivel mundial.</small>
+                                    </div>
+                                </div>
+                                <table class="table no-border mini-table m-t-20">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-muted">Estudiantes</td>
+                                            <td class="font-medium">2M</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Profesores</td>
+                                            <td class="font-medium">7k</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Paises</td>
+                                            <td class="font-medium">89</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Carreras</td>
+                                            <td class="font-medium">110</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <ul class="row list-style-none text-center m-t-30">
+                                    <li class="col-3">
+                                        <h4 class="text-info"><i class="fa fa-trophy"></i></h4>
+                                        <span class="d-block text-muted">2014</span>
+                                        <h3 class="m-t-5">70</h3>
+                                    </li>
+                                    <li class="col-3">
+                                        <h4 class="text-info"><i class="fa fa-trophy"></i></h4>
+                                        <span class="d-block text-muted">2017</span>
+                                        <h3 class="m-t-5">+100</h3>
+                                    </li>
+                                    <li class="col-3">
+                                        <h4 class="text-info"><i class="fa fa-trophy"></i></h4>
+                                        <span class="d-block text-muted">2019</span>
+                                        <h3 class="m-t-5">175</h3>
+                                    </li>
+                                    <li class="col-3">
+                                        <h4 class="text-info"><i class="fa fa-trophy"></i></h4>
+                                        <span class="d-block text-muted">2021</span>
+                                        <h3 class="m-t-5">+200</h3>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
