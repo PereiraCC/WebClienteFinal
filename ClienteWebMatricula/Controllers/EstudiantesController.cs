@@ -35,6 +35,7 @@ namespace ClienteWebMatricula.Controllers
         {
             Estudiante estudiante = new Estudiante();
             estudiante.tiposIdentificacion = cargarTiposUsuario();
+            ViewBag.error = null;
             return View(estudiante);
         }
 
@@ -50,8 +51,15 @@ namespace ClienteWebMatricula.Controllers
             {
                 return RedirectToAction("Estudiantes", "Estudiantes");
             }
+            else
+            {
+                Estudiante es = new Estudiante();
+                es.tiposIdentificacion = cargarTiposUsuario();
+                ViewBag.error = res;
+                return View(es);
+            }
 
-            return View();
+            
         }
 
         public ActionResult Eliminar(string id)
@@ -63,8 +71,11 @@ namespace ClienteWebMatricula.Controllers
             {
                 return RedirectToAction("Estudiantes", "Estudiantes");
             }
-
-            return RedirectToAction("Index", "Home");
+            else
+            {
+                return RedirectToAction("Estudiantes", "Estudiantes");
+            }
+           
         }
 
         public ActionResult Emails(string id)

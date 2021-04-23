@@ -27,6 +27,7 @@ namespace ClienteWebMatricula.Controllers
         public ActionResult Crear()
         {         
             ViewBag.opciones = cargarDiasModificar();
+            ViewBag.error = null;
             return View("Crear");
         }
 
@@ -42,8 +43,13 @@ namespace ClienteWebMatricula.Controllers
             {
                 return RedirectToAction("Horarios", "Horarios");
             }
+            else
+            {
+                ViewBag.opciones = cargarDiasModificar();
+                ViewBag.error = res;
+                return View();
+            }
 
-            return View();
         }
 
         public ActionResult Actualizar(string id, string PropertyName, string value)

@@ -36,6 +36,7 @@ namespace ClienteWebMatricula.Controllers
         {
             Cursos curso = new Cursos();
             curso.Carreras = cargarCarreras();
+            ViewBag.error = null;
             return View(curso);
         }
 
@@ -51,8 +52,15 @@ namespace ClienteWebMatricula.Controllers
             {
                 return RedirectToAction("Cursos", "Cursos");
             }
+            else
+            {
+                Cursos curso = new Cursos();
+                curso.Carreras = cargarCarreras();
+                ViewBag.error = res;
+                return View(curso);
+            }
 
-            return View();
+            
         }
 
         public ActionResult Actualizar(string id, string PropertyName, string value)

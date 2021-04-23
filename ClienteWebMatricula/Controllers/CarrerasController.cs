@@ -25,6 +25,7 @@ namespace ClienteWebMatricula.Controllers
         [HttpGet]
         public ActionResult Crear()
         {
+            ViewBag.error = null;
             return View();
         }
 
@@ -38,8 +39,11 @@ namespace ClienteWebMatricula.Controllers
             {
                 return RedirectToAction("Carreras", "Carreras");
             }
-
-            return View();
+            else
+            {
+                ViewBag.error = res;
+                return View();
+            }
         }
 
         public ActionResult Actualizar(string id, string PropertyName, string value)

@@ -36,6 +36,7 @@ namespace ClienteWebMatricula.Controllers
             ViewBag.cursos = obtenerNombreCursos();
             ViewBag.horarios = obtenerHorarios();
             ViewBag.periodos = obtenerPeriodos();
+            ViewBag.error = null;
             return View();
         }
 
@@ -51,8 +52,16 @@ namespace ClienteWebMatricula.Controllers
             {
                 return RedirectToAction("Grupos", "Grupos");
             }
+            else
+            {
+                ViewBag.profesores = obtenerNombreProfesores();
+                ViewBag.cursos = obtenerNombreCursos();
+                ViewBag.horarios = obtenerHorarios();
+                ViewBag.periodos = obtenerPeriodos();
+                ViewBag.error = res;
+                return View();
+            }
 
-            return View();
         }
 
         public ActionResult Actualizar(string id, string PropertyName, string value)

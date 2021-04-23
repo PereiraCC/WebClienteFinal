@@ -35,6 +35,7 @@ namespace ClienteWebMatricula.Controllers
         {
             Profesor profesor = new Profesor();
             profesor.tiposIdentificacion = cargarTiposUsuario();
+            ViewBag.error = null;
             return View(profesor);
         }
 
@@ -50,8 +51,13 @@ namespace ClienteWebMatricula.Controllers
             {
                 return RedirectToAction("Profesores", "Profesores");
             }
-
-            return View();
+            else
+            {
+                Profesor pro = new Profesor();
+                pro.tiposIdentificacion = cargarTiposUsuario();
+                ViewBag.error = res;
+                return View(pro);
+            }
         }
 
         public ActionResult Actualizar(string id, string PropertyName, string value)

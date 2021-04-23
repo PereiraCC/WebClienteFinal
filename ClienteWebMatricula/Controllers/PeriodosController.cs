@@ -29,6 +29,7 @@ namespace ClienteWebMatricula.Controllers
         public ActionResult Crear()
         {
             ViewBag.opciones = cargarOpcionesModificar();
+            ViewBag.error = null;
             return View("Crear");
         }
 
@@ -44,8 +45,13 @@ namespace ClienteWebMatricula.Controllers
             {
                 return RedirectToAction("Periodos", "Periodos");
             }
+            else
+            {
+                ViewBag.opciones = cargarOpcionesModificar();
+                ViewBag.error = res;
+                return View();
+            }
 
-            return View();
         }
 
         public ActionResult Actualizar(string id, string PropertyName, string value)
